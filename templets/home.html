@@ -1,0 +1,1032 @@
+<html>
+    <style>
+
+body {background-color: #f7f1e3 ;
+  padding: 0;
+  margin: 0;
+}
+/*POP UP */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+.genre-buttons {
+    text-align: center;
+}
+
+.genre-button {
+    background-color: #92acbd;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.selected {
+    background-color: #2ecc71;
+}
+
+.genre-button.selected::after {
+    content: "\2713"; /* Unicode checkmark character */
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.genre-button:hover {
+background-color: #000000;
+}
+.signup-container {
+        max-width: 350px;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+    .login-title {
+        font-family:'Pixelify Sans', sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-subtitle {
+        font-size: 20px;
+        color: #777;
+        text-align: center;
+        margin-bottom: 20px;}
+    .login-button {
+        font-size: 20px;
+        background-color: #bdbd5b;
+        color: #fff;
+        padding: 20px 90px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+     /* Modal Dialog Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+/* END POP UP */
+
+.search {
+    position: absolute;
+    top: 5px;
+    height: 40px;
+    width: 500px;
+    }  
+
+
+.head img{
+  background-color:rgb(193, 190, 10);
+  opacity: 0.7;
+  transition: 0.3s;
+  height: 50px;
+  
+}
+
+.head img:hover {
+  opacity: 1;
+  background-color:grey;
+}     
+.head{
+        background-color: rgb(0, 0, 0);
+        border-bottom: 2px solid black;
+        top: 0px;
+        text-align: center;
+        opacity: 0.9;
+        color: white;
+        font-size: 29px;
+        font-family: Comic Sans MS;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        z-index: 1;
+        transition:0.7s;
+        }
+.head:hover{
+	opacity:1;
+	background-color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-bottom: 4px solid white;
+}
+.sidenav {
+        height: 100%;
+        background-image: url("/static/peter1.gif");
+        background-position: center;
+        width: 0;
+        position: fixed;
+        opacity: 0.4;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        transition: 0.7s;
+}
+.sidenav:hover{
+	opacity: 1;
+}
+
+.sidenav a {
+    padding: 10px 8px 10px 70px;
+    font-size: 27px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover{
+    background-color: white;
+    color: black;
+    
+}
+
+.sidenav .c a{
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+.sidenav img{
+  opacity: 0.5;
+  transition: 0.4s;
+  height:50px ;
+  width: 60px;
+}
+
+.sidenav img:hover{
+  opacity: 1;
+  background-color: grey;
+}
+.login {
+    height: 100%;
+    width: 0;
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    opacity: 1;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1000px;
+}
+
+.login .closebtn {
+    position: absolute;
+    top: 0px;
+    color: white;
+    right: 15px;
+    text-decoration: none;
+    font-size: 50px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.login .closebtn:hover {
+    background-color: grey;
+    color: black;
+}
+.login img{
+	border: 3px solid white;
+	transition: 0.5s;
+  border-radius: 10px;
+}
+
+.login img:hover{
+  background-color: white;
+	}
+
+.button{
+  padding: 10px;
+  width: 70px;
+  color: black;
+  font-size: 20px;
+  background-color:white;
+  border-radius: 5px;
+  border: 3px solid white;
+  transition: 0.3s;
+}
+
+.button:hover{
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+}
+/* Keyframes for the slideshow */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  5% { transform: translateX(0); }
+  10% { transform: translateX(-100%); }
+  15%  {transform: translateX(-100%); }
+  20% { transform: translateX(-200%); }
+  25% { transform: translateX(-200%); }
+  30% { transform: translateX(-300%); }
+  35% { transform: translateX(-300%); }
+  40% { transform: translateX(-400%); }
+  45% { transform: translateX(-400%); }
+  50% { transform: translateX(-400%); }
+  55% { transform: translateX(-400%); }
+  60% { transform: translateX(-400%); }
+  65% { transform: translateX(-400%); }
+  70% { transform: translateX(-300%); }
+  75% { transform: translateX(-300%); }
+  80% { transform: translateX(-200%); }
+  85% { transform: translateX(-200%); }
+  90% { transform: translateX(-100%); }
+  95% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* Styles for the slideshow container */
+.slider-frame {
+  width: 100%; /* Adjust the width as needed */
+  height: 560px; /* Adjust the height as needed */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  top: 20px;
+  left: 0px;
+  right: 0px;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  box-shadow: 10px 25px 28px rgba(0,0,0,0.3);
+}
+
+/* Styles for the individual slide images */
+.img-container {
+  width: 100%; /* Adjust the width to match the container */
+   /* height: 600px; Adjust the height to match the container */
+  display: inline-block;
+  vertical-align: top;
+}
+.slider-frame .slide-images .img-container img{width: 100%; height: 100%;}
+/* Apply the animation to the slide-images container */
+.slide-images {
+  white-space: nowrap; /* Prevent line breaks between images */
+  animation: slide 40s linear infinite; /* Adjust the animation duration as needed */
+}
+iframe{padding-bottom: 10px;}
+
+main{padding-top: 2em;}
+/* Rating */
+
+
+/* Movies CSS DISPLAY*/
+.rowposter {width:100%;
+	        object-fit: contain;
+			max-height: 190px;
+		    margin-right: 10px;
+		    transition: transform 450ms;}
+.rowposters {display: flex;
+            overflow-y: hidden;
+			overflow-x: scroll;
+			padding: 20px;}
+	h2 {color:azure;}
+.rowposter:hover {transform: scale(1.3);}	
+.rowposters::-webkit-scrollbar {display: none;}
+.row  {color:aliceblue;
+  background: rgb(188,197,155);
+  background: linear-gradient(90deg, rgba(188,197,155,0.9473039215686274) 7%, rgba(218,226,178,1) 43%, rgba(173,182,197,0.9753151260504201) 100%);
+       position: relative;
+       top: 150px;
+       margin-left: 20px;
+      position: relative;
+      border: 3px solid rgb(0, 0, 0);
+      border-radius: 2px;
+      padding-top: 0px;}
+
+
+img.test:hover{transform: scale(1.3);
+	transition: transform 450ms;
+	margin-right: 10px;} 
+  .news_f{display: flex;}
+  .news_f .container{margin-right: 10px;}
+/* columan side display */
+.container {
+            position: relative;
+            top:100px;
+            height: 500px; /* Set the height to 50% of the viewport height */
+            overflow: hidden;
+            padding: 40px;
+        }
+        img.ctest {width:100%;
+	        object-fit: contain;
+			    max-height: 190px;
+		      margin-right: 10px;
+		      transition: transform 450ms;}
+img.ctest:hover{
+          transform: scale(1.3);
+	        transition: transform 450ms;
+	        margin-right: 10px;
+         }
+
+        .column {
+            position: absolute;
+            top: 1px;
+            right: 15px;
+            width: 300px; /* Adjust the width as needed */
+            height: 100%;
+            color: aliceblue;
+            background-color: black;
+            padding: 2px;
+            border: 10px solid rgb(0, 0, 0);
+            border-radius : 8px;
+            overflow-y: scroll;
+
+        }
+        .column h2 {
+            color: azure;
+        }
+        .columnposters {
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 0;
+        }
+        .columnposter {
+            width: 190px;
+            object-fit: contain;
+            max-height: 100%;
+            margin-bottom: 10px;
+            transition: transform 450ms;
+            padding: 10px;
+        }
+        
+        
+        .columnposters::-webkit-scrollbar {
+            display: none;
+        }
+        .column::-webkit-scrollbar {display: none;}
+/* PROFILE */
+.profile-image {
+    position: absolute;
+    left: 1em;
+    top: 7em;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    color: #f7f1e3;
+    
+}
+.login h3{color: #f7f1e3;}
+.login h3 b{
+      
+       padding: 30px;}
+.login.follow{margin-left: 100px;}
+.login h1{
+  margin-left: 30px;
+  color: #f7f1e3;}
+.login p{color: #f7f1e3;
+         margin-left: 30px;}
+.login.recent{color: #f7f1e3;}
+
+.profile-image img {
+    height: 4em; 
+    border-radius: 50%;
+}
+
+.bt input{width: 130px;
+  height: 30px;
+  margin-left: 80px;
+  color: rgb(5, 40, 40);}
+
+
+
+  .news{display: flex;
+        margin-left: 5px;
+        background-color: black;
+      color: aliceblue;}
+
+.news_1_1:hover {background-color: rgb(37, 36, 36);
+    transform: scale(1.02);
+	        transition: transform 450ms;
+                 }
+.news_1_2:hover {background-color: rgb(37, 36, 36);
+    transform: scale(1.02);
+	        transition: transform 450ms;
+                 }
+.news_r_1{display: flex; color: aliceblue;}
+.news_r_1:hover{background-color: rgb(37, 36, 36);
+    transform: scale(1.02);
+	        transition: transform 450ms;}
+  .peep_news{background-color: black;
+             color: aliceblue;
+            }
+  .peep_news:hover{color: blue;}
+
+  /*Footer*/
+  footer{
+    background: rgb(36,34,0);
+background: linear-gradient(90deg, rgba(36,34,0,1) 7%, rgba(9,121,103,1) 43%, rgba(0,99,255,1) 100%);
+  color: #f7f1e3;
+}
+.foot{
+  display: flex;
+}
+a{
+  text-decoration: none;
+  color: #f7f1e3;
+}
+.f_nav{
+  margin-left: 40px;
+}
+.f_con{
+  margin-left: 33%;
+
+}
+.icon{
+  height: 20px;
+    width: auto; 
+    margin-right: 10px;
+}
+.f_acc{
+  margin-left: 33%;
+}
+.f_nav a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #f7f1e3;
+    font-weight: 500;
+}
+
+.f_nav a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background:var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.f_nav a:hover::after {
+    width: 100%;
+}
+.recent img{height: 70px;}
+</style>
+<script>
+    function openNav(){
+        document.getElementById('mySidenav').style.width="250px";
+    }
+    function closeNav(){
+      document.getElementById("mySidenav").style.width="0";
+    }
+    function openLog(){
+      document.getElementById("myLogin").style.width ="450px";
+    }
+    function closeLog(){
+      document.getElementById("myLogin").style.width = "0";
+    }
+    function showInterestsModal() {
+        var modal = document.getElementById("interests-modal");
+        modal.style.display = "block";
+    }
+
+    function closeInterestsModal() {
+        var modal = document.getElementById("interests-modal");
+        modal.style.display = "none";
+    }
+
+    function toggleButton(button) 
+    {
+    button.classList.toggle("selected");
+    }
+    /* Continew Button */
+    var selectedGenres = 0;
+
+        function toggleButton(button) {
+            button.classList.toggle("selected");
+            if (button.classList.contains("selected")) {
+                selectedGenres++;
+            } else {
+                selectedGenres--;
+            }
+            updateContinueButton();
+        }
+
+        function updateContinueButton() {
+            var continueButton = document.getElementById("continue-button");
+            if (selectedGenres >= 3) {
+                continueButton.disabled = false;
+                continueButton.style.backgroundColor = "#bdbd5b";
+                
+            } else {
+                continueButton.disabled = true;
+                continueButton.style.backgroundColor = "#ccc";
+            }
+        }
+
+        function checkSelections() {
+            if (selectedGenres >= 3) {
+                // Perform further actions or navigate to the next step.
+                alert("You selected at least 3 genres. Continue to the next step!");
+                closeInterestsModal();
+            } else {
+                alert("Please select at least 3 genres.");
+            }
+        }
+
+  </script>
+    {% if show_modal %}
+<script>
+    // JavaScript functions for showing the modal
+    window.onload = function() {
+        showInterestsModal();
+    }
+</script>
+{% endif %}
+
+ 
+    <body>
+      <section>
+        <header>
+          <div id="mySidenav" class="sidenav"><img src="\static\navsign.png" onclick="closeNav()"><br><br><br><br><br><br>
+            <div class="c"><a>Welcome</a></div>
+              <a href="anime.html">ANIME</a>
+              <a href="tvshow.html">TV SHOWS</a>
+              <a href="genres.html" onclick="CatOpen()">GENRES</a><br><br><br><br><br><br><br><br><br><br><br><br><hr size="4" color="white">
+              <a href="about.html">ABOUT</a><hr size="4" color="white">
+              
+            </div>
+            <div class="head">
+            <div style="float: left;"><img src="/static/navsign.png" onclick="openNav()"></div>
+            <div style="float: right;"><img src="/static/icons8-life-cycle.gif" onclick="openLog()"></div>
+        
+            <div><input type="search" class="search" placeholder="search"></div>
+        </div>
+        <div id="myLogin" class="login">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeLog()">&times;</a><br>
+            
+          <div style="font-size: 30px;font-weight: bold;font-family: Comic Sans MS;color: white;"><center>Welcome</center>
+          </div><hr>
+          <br><br><br>
+          <div class="profile-image">
+         <img src="/static/profile_peter.jpg" alt=""> 
+          </div>
+          <center> <h2><b>peter_</b></h2></center>
+          
+          <center><h3><b>7 Favourite</b>      <b>121 Movies Watched</b>  </h3></center>
+          
+          <p><b>I have been using peterpeepshow since 4 months.</b> </p>
+          <div class="bt"><input type="button" value="Edit profile"> <input type="button" value="logout"> </div>
+          <hr><h1>Recently Watched!</h1>
+          <div class="recent">
+            <h2><a href="{% url 'm_display' %}?id=After We Collided
+              "><img src="/static/im1.jpg" class="test" height="190px" id="After We Collided
+              "></a> After we colide</h2>
+            <h2><a href="{% url 'm_display' %}?id=Joker
+
+              "><img src="/static/im2.jpg" class="test" height="190px" id="Joker
+
+              "></a> Joker</h2>
+            <h2><a href="#
+
+              "><img src="/static/im4.jpg" class="test" height="190px" id="Joker
+
+              "></a>Fury</h2>
+             <hr>
+          </div>
+        </div> 
+        
+        </header>
+      </section>
+      <section>
+        <main>
+          
+          <div class="slider-frame">
+            <div class="slide-images">
+              <div class="img-container">
+                <a href="{% url 'm_display' %}?id=Kahaani
+
+                "><img src="/static/a_kahaani.jpg" class="test" height="190px" id="Kahaani
+
+                "></a>
+              </div>
+              <div class="img-container">
+                <a href="{% url 'm_display' %}?id=ANT-MAN
+
+
+                "><img src="/static/a_antman.jpg" class="test" height="190px" id="ANT-MAN
+
+
+                "></a>
+              </div>
+              <div class="img-container">
+                <a href="{% url 'm_display' %}?id=Sacred Games
+
+
+                "><img src="/static/tv_bh4.png" class="test" height="190px" id="Sacred Games
+
+
+                "></a>
+              </div>   
+              <div class="img-container">
+                <a href="{% url 'm_display' %}?id=The Invisible Man
+
+
+                "><img src="/static/s_invisible.jpg" class="test" height="190px" id="The Invisible Man
+
+
+                "></a>
+              </div>   
+              <div class="img-container">
+                <a href="{% url 'm_display' %}?id=Game of Thrones
+
+                "><img src="/static/a_got.jpg" class="test" height="190px" id="Game of Thrones
+
+
+                "></a>
+            </div>  
+        </div>
+        </div>
+         <br> <br>
+        <div class="peep_news">
+          <center><img src="" alt=""><h1><b>Peter's Peep News!</b></h1></center>
+      </div>
+      <div class="n_c">
+      <div class="news">
+        
+      <div class="news_l">
+         <h1>Top News</h1> 
+           <div class="news_1_1">
+              <center>
+         <img src="/static/a_got.jpg" alt="" height="260px">
+      </center>
+         <h2><b>NEW SEASION WILL BE REALISING SOON! <br>
+              ONLY AVAILABLE ON PETERPEEPSHOW</b></h2>
+              <h3>Timing: 12am oct 19,2023</h3>
+          </div>
+          <div class="news_1_2">
+            <center><img src="/static/tv_bh6.jpg" alt="" height="260px"></center>
+            <h2>This week special!! Realising On <br> This weekend </h2>
+          </div>
+         </div>
+      <div class="news_r">
+          <h1><b>Latest</b></h1>
+          <div class="news_r_1">
+              <img src="/static/anime.jpg" alt="" height="100px">
+              <p>One Piece is a Japanese manga series written and illustrated
+                   by Eiichiro Oda. It has been serialized in Shueisha's shōnen 
+                   manga magazine Weekly Shōnen Jump since July 1997, with its individual
+                    chapters compiled into 106 tankōbon volumes as of July 2023
+                     <br>
+                     Realese Data: 26 oct,2023</p>
+                    
+          </div>
+         
+          <div class="news_r_1">
+              <img src="/static/p1.jpg" alt="" height="100px">
+              <p><b>'Barbie' BEATS 'Oppenheimer' at global box office.Barbie has earned $163 million dollars since its release, completely destroying Oppenheimer at the box office</b> 
+                     
+                     Realese Data: 26 oct,2023</p>
+                    
+          </div><br>
+          <div class="news_r_1">
+              <img src="/static/p2.jpg" alt="" height="100px">
+              <p><b> Shah Rukh Khan will not be promoting 'Tiger 3' with Salman Khan<br> read why!</b>
+                     
+                     </p>
+                    
+          </div><br>
+          <div class="news_r_1">
+              <img src="/static/p3.avif" alt="" height="100px">
+              <p>Leonardo DiCaprio’s Killers Of The Flower Moon: Hollywood acknowledges White atrocities on Native Americans
+                    
+                    </p>
+                    
+          </div><br>
+          <div class="news_r_1">
+              <img src="/static/p4.jpg" alt="" height="100px">
+              <p>When Harry Potter’s ‘Hermione’ Emma Watson Flirted Hard With Her Soulmate ‘Draco’ Tom Felton In This BTS Clip, Making Him Jealous By Dancing With Daniel Radcliffe, Here’s What Happened!
+                     
+                     </p>
+                    
+          </div><br>
+          <div class="news_r_1">
+              <img src="/static/p5.webp" alt="" height="100px">
+              <p>Ana De Armas Once Put A Spell On Us As She Gazed Intensely In A Monokini, Flaunting Her Curves & Cl*avage While Melting Us With Her Utmost Hawtness!
+                     </p>
+                    
+          </div><br>
+          <div class="news_r_1">
+              <img src="/static/p6.jpg" alt="" height="100px">
+              <p>'Bas mai theek hu..' says Janhvi Kapoor as she walks towards her car!!!!
+                     </p>
+                    
+          </div>
+
+      </div>
+  </div>
+        
+
+        
+        <!-- 
+        <div class="container">
+          <div class="column">
+              <center><h2>Top Hits!</h2></center>
+              <div class="columnposters">
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+                  <a href="m_display.html"><img src="/static/im3.jpg" class="ctest" height="190px"></a>
+              </div>
+          </div>
+      </div>
+      -->
+    </div>
+
+
+        <div class="row">
+          <h2>TOP 10 TRENDING!</h2>
+          <div class="rowposters">
+            <a href="{% url 'm_display' %}?id=Game of Thrones
+            ">  <img src="/static/a_got.jpg"  class="test" height="190px" name="" id="Game of Thrones
+            "></a>
+            <a href="{% url 'm_display' %}?id=Peaky Blinders
+            "><img src="/static/tv_tr7.jpg" class="test" height="190px" name="" id="Peaky Blinders
+            "></a>
+            <a href="{% url 'm_display' %}?id=Bleach
+            "><img src="/static/a_ff2.jpg" class="test" height="190px" id="Bleach
+            "></a>
+            <a href="{% url 'm_display' %}?id=La La Land
+            "><img src="/static/r_lalaland.jpg" class="test" height="190px" id="La La Land
+            "></a>
+            <a href="{% url 'm_display' %}?id=Mad Max: Fury Road"
+            "><img src="/static/a_madmax.avif" class="test" height="190px" id="Mad Max: Fury Road"
+            "></a>
+            <a href="{% url 'm_display' %}?id=The Dark Knight
+            "><img src="/static/a_dark_knight.jpg" class="test" height="190px" id="The Dark Knight
+            "></a>
+            <a href="{% url 'm_display' %}?id=A Quiet Place
+
+            "><img src="/static/h_aquietplace.jpg" class="test" height="190px" id="A Quiet Place
+
+            "></a>
+            <a href="{% url 'm_display' %}?id=Hera Pheri
+
+
+            "><img src="/static/c_herapheri.jpg" class="test" height="190px" id="Hera Pheri
+
+
+            "></a>
+            <a href="{% url 'm_display' %}?id=The Hangover
+
+            "><img src="/static/c_The_Hangovee.webp" class="test" height="190px" id="The Hangover
+
+            "></a>
+            
+          </div>
+        </div>
+        <div class="row">
+          <h2>This Weekend</h2>
+          <div class="rowposters">
+            <a href="{% url 'm_display' %}?id=Taare Zameen Par
+            "><img src="/static/d_TareZmeenPar.jpg" class="test" height="190px" id="Taare Zameen Par
+            "></a>
+            <a href="{% url 'm_display' %}?id=ANT-MAN
+            "><img src="/static/a_antman.jpg" class="test" height="190px" id="ANT-MAN
+            "></a>
+            <a href="{% url 'm_display' %}?id=PK
+            "><img src="/static/im3.jpg" class="test" height="190px"></a>
+            <a href="{% url 'm_display' %}?id="><img src="/static/sc_pk.jpg" class="test" height="190px" id="PK
+              "></a>
+            <a href="{% url 'm_display' %}?id=Jab We Met
+            "><img src="/static/r_jabwemet.jpg"class="test" height="190px" id="Jab We Met
+            "></a>
+            <a href="{% url 'm_display' %}?id=MS Dhoni: The Untold Story
+            "><img src="/static/doc_msd.jpg" class="test" height="190px"id="MS Dhoni: The Untold Story
+            "></a>
+            <a href="{% url 'm_display' %}?id=Jurassic Park
+            "><img src="/static/adv_jurassicpark.jpg" class="test" height="190px" id="Jurassic Park
+            "></a>
+            <a href="{% url 'm_display' %}?id=Sex Education
+            "><img src="/static/tv_tr4.webp"class="test" height="190px" id="Sex Education
+            "></a>
+            <a href="{% url 'm_display' %}?id=Guns and Gulaabs
+            "><img src="/static/tv_bh2.jpg" class="test" height="190px" id="Guns and Gulaabs
+            "></a>
+            
+          </div>
+        </div>
+        <div class="row">
+          <h2>Watch with Family</h2>
+          <div class="rowposters">
+            <a href="{% url 'm_display' %}?id=Raazi
+            "><img src="/static/adv_raazi.jpg" class="test" height="190px" id="Raazi
+            "></a>
+            <a href="{% url 'm_display' %}?id=Uri: The Surgical Strike
+            "><img src="/static/doc_the_surgical_strike.jpg" class="test" height="190px" id="Uri: The Surgical Strike
+            "></a>
+            <a href="{% url 'm_display' %}?id=Mary Kom
+            "><img src="/static/doc_marrykom.jpg" class="test" height="190px" id="Mary Kom
+            "></a>
+            <a href="{% url 'm_display' %}?id=Inception
+            "><img src="/static/sc_inception.jpg" class="test" height="190px" id="Inception
+            "></a>
+            <a href="{% url 'm_display' %}?id=Dilwale Dulhania Le Jayenge
+            "><img src="/static/r_ddlj.jpg" class="test" height="190px" id="Dilwale Dulhania Le Jayenge
+            "></a>
+            <a href="{% url 'm_display' %}?id=Baahubali: The Beginning
+            "><img src="/static/a_bahubali.webp"class="test" height="190px" id="Baahubali: The Beginning
+            "></a>
+            <a href="{% url 'm_display' %}?id=Bhoot: Part One - The Haunted Ship
+            "><img src="/static/h_bhoot.jpg" class="test" height="190px" id="Bhoot: Part One - The Haunted Ship
+            "></a>
+            <a href="{% url 'm_display' %}?id=3 Idiots
+            "><img src="/static/c_3idiots.jpg"class="test" height="190px" id="3 Idiots
+            "></a>
+            <a href="{% url 'm_display' %}?id=Munna Bhai M.B.B.S.
+            "><img src="/static/c_munnabhaimbbs.jpg" class="test" height="190px" id="Munna Bhai M.B.B.S.
+            "></a>
+            <a href="{% url 'm_display' %}?id=My Name Is Khan
+            "><img src="/static/d_myNameisKhan.jpg"class="test" height="190px" id="My Name Is Khan
+            "></a>
+            <a href="{% url 'm_display' %}?id=Bajrangi Bhaijaan
+            "><img src="/static/d_BajrangiBhaijan.jpg" class="test" height="190px" id="Bajrangi Bhaijaan
+            "></a>
+            
+          </div>
+        </div>
+        <div class="row">
+          <h2>Peter's Recommended</h2>
+          <div class="rowposters">
+            <a href="{% url 'm_display' %}?id=Dangal
+            "><img src="/static/doc_dangal.webp" class="test" height="190px" id="Dangal
+            "></a>
+            <a href="{% url 'm_display' %}?id=Avatar
+            "><img src="/static/adv_avatar.jpg" class="test" height="190px" id="Avatar
+            "></a>
+            <a href="{% url 'm_display' %}?id=Breaking Bad
+            "><img src="/static/tv_tr3.jpg" class="test" height="190px" id="Breaking Bad
+            "></a>
+            <a href="{% url 'm_display' %}?id=Delhi Crime
+            "><img src="/static/tv_bh3.jpg" class="test" height="190px" id="Delhi Crime
+            "></a>
+            <a href="{% url 'm_display' %}?id=E.T. the Extra-Terrestrial
+            "><img src="/static/sc_et.jpg"class="test" height="190px" id="E.T. the Extra-Terrestrial
+            "></a>
+            <a href="{% url 'm_display' %}?id="><img src="/static/d_harry.jpg" class="test" height="190px"></a>
+            <a href="{% url 'm_display' %}?id="><img src="/static/tv_bh.webp" class="test" height="190px"></a>
+            <a href="{% url 'm_display' %}?id="><img src="/static/tv_bh7.jpg"class="test" height="190px"></a>
+            <a href="{% url 'm_display' %}?id="><img src="/static/tv_ch5.jpeg" class="test" height="190px"></a>
+            
+          </div>
+        </div>
+        <div class="row">
+          <h2>Web Series</h2>
+          <div class="rowposters">
+            <a href="{% url 'm_display' %}?id=Narcos"><img src="/static/tv_ch4.jpg" class="test" height="190px" id="Narcos
+              "></a>
+            <a href="{% url 'm_display' %}?id=Stranger Things
+            "><img src="/static/tv_tr.jpg" class="test" height="190px" id="Stranger Things
+            "></a>
+            <a href="{% url 'm_display' %}?id=The Walking Dead
+            "><img src="/static/tv_tr5.jpg" class="test" height="190px" id="The Walking Dead
+            "></a>
+            <a href="{% url 'm_display' %}?id=The Witcher
+            "><img src="/static/tv_tr6.png" class="test" height="190px" id="The Witcher
+            "></a>
+            <a href="{% url 'm_display' %}?id=Game of Thrones
+            "><img src="/static/tv_tr2.jpg"class="test" height="190px" id="Game of Thrones
+            "></a>
+            <a href="m_display.html"><img src="/static/tv_tr8.webp" class="test" height="190px"></a>
+            <a href="m_display.html"><img src="/static/tv_bh4.png" class="test" height="190px"></a>
+            <a href="m_display.html"><img src="/static/tv_bh5.jpg"class="test" height="190px"></a>
+            <a href="m_display.html"><img src="/static/tv_bh6.jpg" class="test" height="190px"></a>
+          </div>
+        </div>
+      </main>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section>
+      <footer>
+        <div class="foot">
+          <div class="f_nav">
+            <h1>Navigations</h1>
+            <a href="#">Browse Popular</a></h4>
+            <h4><a href="#">Browse Casts</a></h4>
+            <h4><a href="#">Browse Movies</a></h4>
+            <h4><a href="#">Release Calander</a></h4>
+            <h4><a href="#">News</a></h4>
+          </div>
+          <div class="f_con">
+            <h1><b>Connect with Us:</b></h1>
+            <h4><a href="https://www.youtube.com/embed/83PAXL8wdw4"><img src="/static/y1.jpg" alt="Youtube" class="icon">Youtube</a><br></h4>
+            <h4><a href="#"><img src="/static/f1.jpg" alt="Facebook" class="icon">Facebook</a><br></h4>
+            <h4><a href="#"><img src="/static/t1.jpg" alt="Twitter" class="icon">Twitter</a><br></h4>
+            <h4><a href="#"><img src="/static/i1.jpg" alt="Instagram" class="icon">Instagram</a><br></h4>
+          </div>
+          <div class="f_acc">
+            <h1>
+              Login:
+              <h4><a href="signup.html">Create Account</a></h4>
+              <h4><a href="login.html">Log in</a></h4>
+              <h4><a href="signup.html">Log out</a></h4>
+            </h1>
+          </div>
+          
+        </div>
+
+      </footer>
+    </section>
+     <!-- Interests Modal -->   
+     <div id="interests-modal" class="modal">
+      <div class="modal-content">
+
+          <center>
+              <div class="signup-container">
+                  <!DOCTYPE html>
+                      <div class="login-title">Interests</div>
+                      <div class="login-subtitle">Pick 3 or more things you'd like to see in your home feed</div>
+                      <div class="genre-buttons" id="genre-buttons">
+                          <button class="genre-button" onclick="toggleButton(this)">Action</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Adventure</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Animation</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Action</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Adventure</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Animation</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Comedy</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Crime</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Documentary</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Drama</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Family</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Fantasy</button>
+                          <button class="genre-button" onclick="toggleButton(this)">History</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Horror</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Music</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Mystery</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Romance</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Science Fiction</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Thriller</button>
+                          <button class="genre-button" onclick="toggleButton(this)">War</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Western</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Biography</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Sport</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Musical</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Supernatural</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Noir</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Slice of Life</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Psychological</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Cyberpunk</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Steampunk</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Superhero</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Martial Arts</button>
+                          <button class="genre-button" onclick="toggleButton(this)">Disaster</button>
+                          <button id="continue-button" type="submit" class="login-button" onclick="checkSelections()">Continue...</button>
+                      </div>
+                  </div>
+                  </center>
+</body>
+</html>

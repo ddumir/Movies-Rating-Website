@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Luckiest+Guy&display=swap');   
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #caba75;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            max-width: 350px;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="password"]:focus {
+            outline: none;
+            border: 1px solid #007BFF;
+        }
+
+        .signup-button {
+            background-color: #000000;
+            color: #fff;
+            padding: 12px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .signup-button:hover {
+            background-color: #0056b3;
+        }
+
+        .signup-title {
+            font-family: 'Luckiest Guy';
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-link {
+            text-align: center;
+        }
+        
+        .peter{
+            position: absolute;
+            left: 0px; 
+            bottom: -40px;           
+
+        }
+        .peter2{
+            position: absolute;
+            right: 0px;    
+            bottom: -40px;        
+
+        }
+        .logo {position: fixed;
+      top:5px; left: 5px;
+       z-index: 2;}
+
+.logo:hover{transform: scale(1.03);
+            transition: transform 450ms;}
+
+    </style>
+
+<body>
+    <div class="logo"><a href="home.html"><img src="/static/logo.png" alt="" height="100px"></a></div>
+    
+    <div class="peter"> <img src="/static/petercup.png" alt=""></div>
+    <div class="peter2"> <img src="/static/dog.png" alt=""></div>
+    <div class="signup-container">
+        <div class="signup-title">Signup Here</div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" name="username" id="username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" placeholder="Confirm Password" id="password2" name="password2">
+            </div>
+            <center>
+                
+            <button type="submit" class="signup-button">Sign up</button></center>
+            <br>
+            {{msg}}
+            <br>
+            <div class="login-link">
+                <a href="{% url 'login' %}">Already have an account?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 2rem;
+    background-color: #e7ecd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    max-width: 350px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+}
+
+.login-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.login-title {
+    font-size: 75px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-subtitle {
+    font-size: 45;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.peter{
+            position: absolute;
+            left: 0px;            
+
+        }
+        .peter:hover{transform: scale(1.1);
+                     transition: transform 450ms;
+                    }
+
+
+.error {
+    animation: blink 1s linear 3;
+    background-color: red;
+}
+
+.logo {position: fixed;
+      top:5px; left: 5px;
+       z-index: 2;}
+
+.logo:hover{transform: scale(1.03);
+            transition: transform 450ms;}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}  
+    </style>
+    <script>
+function checkCredentials() {
+            var usernamee = document.getElementById('username').value;
+            var passwordd = document.getElementById('password').value;
+
+            if (usernamee !== 'username' ||  passwordd !== 'password') {
+                // Incorrect credentials, apply error effect
+                document.getElementById('error-message').innerHTML = "Incorrect username or password";
+                 // Remove error effect after 3 seconds
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission for correct credentials
+        }
+    </script>
+    <body>
+        <div class="logo"><a href="home.html"><img src="/static/logo.png" alt="" height="100px"></a></div>
+        <div class="peter">
+            <img src="/static/peterpeep.png" alt="">
+        </div>
+    
+        <div class="login-container">
+            <div class="login-title">Welcome</div>
+            <div class="login-subtitle">Please log in to your account</div>
+
+        
+       <form method="POST" onsubmit="return checkCredentials();">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="username" id="username" placeholder="Username or Email">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <center>
+            <button type="submit" class="login-button">Login</button>
+            <br>
+            {{msg}}
+        </center>
+    </form>
+    </div>
+
+    </body>
+</html>

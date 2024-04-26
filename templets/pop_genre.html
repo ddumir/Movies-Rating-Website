@@ -1,0 +1,205 @@
+<html>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+    .genre-buttons {
+        text-align: center;
+    }
+    
+    .genre-button {
+        background-color: #92acbd;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    
+    .selected {
+        background-color: #2ecc71;
+    }
+    
+    .genre-button.selected::after {
+        content: "\2713"; /* Unicode checkmark character */
+        margin-left: 5px;
+        font-size: 18px;
+    }
+    
+.genre-button:hover {
+    background-color: #000000;
+}
+.signup-container {
+            max-width: 350px;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+        .login-title {
+            font-family:'Pixelify Sans', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-subtitle {
+            font-size: 20px;
+            color: #777;
+            text-align: center;
+            margin-bottom: 20px;}
+        .login-button {
+            font-size: 20px;
+            background-color: #bdbd5b;
+            color: #fff;
+            padding: 20px 90px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+         /* Modal Dialog Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 350px;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+<script>
+    
+    
+        
+    function toggleButton(button) 
+    {
+    button.classList.toggle("selected");
+    }
+    /* Continew Button */
+    var selectedGenres = 0;
+
+        function toggleButton(button) {
+            button.classList.toggle("selected");
+            if (button.classList.contains("selected")) {
+                selectedGenres++;
+            } else {
+                selectedGenres--;
+            }
+            updateContinueButton();
+        }
+
+        function updateContinueButton() {
+            var continueButton = document.getElementById("continue-button");
+            if (selectedGenres >= 3) {
+                continueButton.disabled = false;
+                continueButton.style.backgroundColor = "#bdbd5b";
+            } else {
+                continueButton.disabled = true;
+                continueButton.style.backgroundColor = "#ccc";
+            }
+        }
+
+        function checkSelections() {
+            if (selectedGenres >= 3) {
+                // Perform further actions or navigate to the next step.
+                alert("You selected at least 3 genres. Continue to the next step!");
+            } else {
+                alert("Please select at least 3 genres.");
+            }
+        }
+        // JavaScript functions ...
+
+    function showInterestsModal() {
+        var modal = document.getElementById("interests-modal");
+        modal.style.display = "block";
+    }
+
+    function closeInterestsModal() {
+        var modal = document.getElementById("interests-modal");
+        modal.style.display = "none";
+    }
+
+    </script>
+<body>
+    <center>
+    <div class="signup-container">
+        <!DOCTYPE html>
+            <div class="login-title">Interests</div>
+            <div class="login-subtitle">Pick 3 or more things you'd like to see in your home feed</div>
+            <div class="genre-buttons" id="genre-buttons">
+                <button class="genre-button" onclick="toggleButton(this)">Action</button>
+                <button class="genre-button" onclick="toggleButton(this)">Adventure</button>
+                <button class="genre-button" onclick="toggleButton(this)">Animation</button>
+                <button class="genre-button" onclick="toggleButton(this)">Action</button>
+                <button class="genre-button" onclick="toggleButton(this)">Adventure</button>
+                <button class="genre-button" onclick="toggleButton(this)">Animation</button>
+                <button class="genre-button" onclick="toggleButton(this)">Comedy</button>
+                <button class="genre-button" onclick="toggleButton(this)">Crime</button>
+                <button class="genre-button" onclick="toggleButton(this)">Documentary</button>
+                <button class="genre-button" onclick="toggleButton(this)">Drama</button>
+                <button class="genre-button" onclick="toggleButton(this)">Family</button>
+                <button class="genre-button" onclick="toggleButton(this)">Fantasy</button>
+                <button class="genre-button" onclick="toggleButton(this)">History</button>
+                <button class="genre-button" onclick="toggleButton(this)">Horror</button>
+                <button class="genre-button" onclick="toggleButton(this)">Music</button>
+                <button class="genre-button" onclick="toggleButton(this)">Mystery</button>
+                <button class="genre-button" onclick="toggleButton(this)">Romance</button>
+                <button class="genre-button" onclick="toggleButton(this)">Science Fiction</button>
+                <button class="genre-button" onclick="toggleButton(this)">Thriller</button>
+                <button class="genre-button" onclick="toggleButton(this)">War</button>
+                <button class="genre-button" onclick="toggleButton(this)">Western</button>
+                <button class="genre-button" onclick="toggleButton(this)">Biography</button>
+                <button class="genre-button" onclick="toggleButton(this)">Sport</button>
+                <button class="genre-button" onclick="toggleButton(this)">Musical</button>
+                <button class="genre-button" onclick="toggleButton(this)">Supernatural</button>
+                <button class="genre-button" onclick="toggleButton(this)">Noir</button>
+                <button class="genre-button" onclick="toggleButton(this)">Slice of Life</button>
+                <button class="genre-button" onclick="toggleButton(this)">Psychological</button>
+                <button class="genre-button" onclick="toggleButton(this)">Cyberpunk</button>
+                <button class="genre-button" onclick="toggleButton(this)">Steampunk</button>
+                <button class="genre-button" onclick="toggleButton(this)">Superhero</button>
+                <button class="genre-button" onclick="toggleButton(this)">Martial Arts</button>
+                <button class="genre-button" onclick="toggleButton(this)">Disaster</button>
+                <button id="continue-button" type="submit" class="login-button" onclick="checkSelections()">Continue...</button>
+            </div>
+        </div>
+        </center>
+            
+          <!-- Interests Modal -->   
+        <div id="interests-modal" class="modal">
+            <div class="modal-content">
+                <div class="login-title">Interests</div>
+                <div class="login-subtitle">Pick 3 or more things you'd like to see in your home feed</div>
+                <div class="genre-buttons" id="genre-buttons">
+                    <!-- Genre buttons ... -->
+                    <button id="continue-button" type="submit" class="login-button" onclick="checkSelections(); closeInterestsModal();">Continue...</button>
+                </div>
+            </div>
+        </div>
+        </body>
+</html>

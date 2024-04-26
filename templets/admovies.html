@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            M_NAME <input type="text" name="m_name">
+            <br>
+            M_YEAR <input type="text" name="year">
+            <br>
+            M_HOUR <input type="text" name="hour">
+            <br>
+            M_IMG <input type="file" name="image">
+            <br>
+            M_LINK <input type="url" name="link">
+            <br>
+            disc <input type="text" name="disc">
+            <br>
+            director<input type="text" name="director">
+            <br>
+            Genre<input type="text" name="genre">
+            <br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

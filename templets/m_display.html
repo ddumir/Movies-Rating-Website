@@ -1,0 +1,117 @@
+<html>
+    <style>
+        body{background-image:linear-gradient(rgba(0, 0, 0, 0.178),rgba(0,0,0,0.8)), url("/static/back_disp.jpg");
+        color: aliceblue;
+        background-attachment: fixed;}
+iframe{height: 400px;
+       width: 450;}
+img{height: 400px;}
+.v1{display: flex;
+    margin-left: 30px;
+    padding: 20px;}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    margin-left: 200px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#7f6868;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08; 
+}
+input.fe{height: 30px; width: 290px;}
+.r_h:hover{background-color: black;
+           color: aliceblue;
+           transform: scale(1.01);
+            transition: transform 450ms;}
+
+.r_h .rate:hover{background-color: black;
+                 color: aliceblue;
+                 }
+.r_flex{display: flex;}
+b.f{height: 50px;}
+.v1 img:hover{ transform: scale(1.02);
+            transition: transform 450ms;}
+.v1 iframe:hover{ transform: scale(1.01);
+            transition: transform 450ms;}
+
+.movie_name h1{font-size: 50px;}
+    </style>
+
+
+    <body bgcolor="pink">
+          
+    {% for e in record %}
+    <div class="movie_name">
+    <h1>{{e.m_name}}</h1>
+    </div>
+    <h5>{{e.m_year}} {{e.m_hour}}</h5>
+    <div class="v1">
+        <img src="/static/{{e.m_img}}">
+        
+        <div>
+            <iframe src="{{e.m_link}}" controls="0"  frameborder="1" ></iframe>
+        </div>
+    </div>
+    <br><br>
+    <b>  Genre:  </b> {{e.genre}} <br> 
+         <b><p> About: {{e.disc}} </p></b>
+        <b>Diractor: </b> {{e.director}}
+        <br>
+        
+        
+     {% endfor %} 
+     
+     <div class="r_h">
+        <center><h1>Rating and Review</h1></center>
+        <div class="r_flex">
+           <div>
+            <b>Feedback:</b> 
+            <input type="text" placeholder="feedback" class="fe">
+        </div>
+     <br>
+     <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </div>
+    
+</div>
+     
+    </body>
+</html>

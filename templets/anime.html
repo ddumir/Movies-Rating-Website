@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <title>ANIME</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7f1e3;
+        }
+        .container {
+            height: 30vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .background-image {
+            background-image: url('/static/a_c1.jpg');
+            background-size: center;
+            overflow: hidden;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            zoom: 185%;
+        }
+        .text-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            color:#f7f1e3;
+            font-size: 3em;
+        }
+        .rowposter {
+            width:100%;
+	        object-fit: contain;
+			max-height: 190px;
+		    margin-right: 10px;
+		    transition: transform 450ms;
+        }
+        .rowposters {display: flex;
+            overflow-y: hidden;
+			overflow-x: scroll;
+			padding: 20px;}
+	h2 {color:black;}
+.rowposter:hover {transform: scale(1.3);}	
+.rowposters::-webkit-scrollbar {display: none;}
+.row  {color:black;
+       margin-left: 20px;}
+.banner{background-size:cover ;}  
+img.test:hover{transform: scale(1.3);
+	transition: transform 450ms;
+	margin-right: 10px;} 
+.logo {position: fixed;
+      top:5px; left: 5px;
+       }
+
+.logo:hover{transform: scale(1.01);
+            transition: transform 450ms;}
+
+    </style>
+</head>
+<body>
+    <div class="logo"><a href="home.html"><img src="/static/logo.png" alt="" height="100px"></a></div>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="text-container">
+            <div class="text">Anime</div>
+        </div>
+    </div>
+    <div class="row">
+		<h2>PICKS FOR YOU</h2>
+			<div class="rowposters">
+				<img src="/static/a_pfy.jpg" class="rowposter">
+				<img src="/static/a_pfy2.jpg" class="rowposter">
+				<img src="/static/a_pfy3.jpg" class="rowposter">
+				<img src="/static/a_pfy4.jpg" class="rowposter">
+				<img src="/static/a_pfy5.png" class="rowposter">
+				<img src="/static/a_pfy6.png" class="rowposter">
+				<img src="/static/a_pfy7.jpg" class="rowposter">
+		</div>
+	</div>
+    <div class="row">
+		<h2>FAN FAVOURITES</h2>
+			<div class="rowposters">
+				<img src="/static/a_pfy6.png" class="rowposter">
+				<img src="/static/a_pfy7.jpg" class="rowposter">
+				<img src="/static/a_pfy2.jpg" class="rowposter">
+				<img src="/static/a_ff.webp" class="rowposter">
+				<img src="/static/a_ff2.jpg" class="rowposter">
+				<img src="/static/a_ff3.jpg" class="rowposter">
+				<img src="/static/a_ff4.png" class="rowposter">
+		</div>
+	</div>
+    <div class="row">
+		<h2>Must watch Movies!</h2>
+			<div class="rowposters">
+				<img src="/static/a_mv.jpg" class="rowposter">
+				<img src="/static/a_mv2.jpg" class="rowposter">
+				<img src="/static/a_mv3.jpg" class="rowposter">
+				<img src="/static/a_mv4.webp" class="rowposter">
+				<img src="/static/a_mv5.webp" class="rowposter">
+				<img src="/static/a_mv6.jpg" class="rowposter">
+				<img src="/static/a_mv7.jpg" class="rowposter">
+		</div>
+	</div>
+</body>
+</html>
